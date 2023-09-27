@@ -35,8 +35,8 @@ Select 'Create new Installable' from the right side<br>
 Enter a Title in the pop up box, i.e. 'VestaMETAR'<br>
 Click 'Create and API Credential' button on the right side. A pop up box should allow you to choose your Vestaboard. Then click 'Create API Credentials'.<br>
 <b>IMPORTANT</b>: Copy and paste these credentials into the config.py file <b>BEFORE</b> closing the box, otherwise you will lose the 'Secret' key.<br>
-<code>api_key='Your Key'</code>
-<code>api_secret='Your Key'</code>
+<code>api_key='Your Key'</code><br>
+<code>api_secret='Your Key'</code><br>
 
 There are some optional settings that can be tailored as well.<br>
 <code>interval=</code> In minutes. This is the time in minutes between updating the Vestaboard for the 'airports' list.<br>
