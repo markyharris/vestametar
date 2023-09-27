@@ -48,7 +48,7 @@ There are some optional settings that can be tailored as well.<br>
 <b>NOTE:</b> The settings in the config.py file are used to run the app when not using the web based admin page which will be discussed shortly.<br>
  
 <b>Test</b><br>
-From the command line enter 
+From the command line enter;<br>
 <code>cd vestametar</code><br>
 <code>sudo python3 vestametar.py</code><br>
 
