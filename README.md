@@ -18,15 +18,12 @@ is that you can also use other apps from Vestaboard+ while still running the Ves
 
 <b>To install:</b><br>
 Clone this repository to your Raspberry Pi by entering the following in the command line;<br>
-<code>git clone https://github.com/markyharris/vestametar.git<</code>br>
+<code>git clone https://github.com/markyharris/vestametar.git</code><br>
 
 This will create a new directory called 'vestametar' and copy all the needed files into it.<br>
 There are 2 files that need to be run at startup;<br>
-<code>webapp.py</code><br>
-<code>vestametar.py</code><br>
-
-webapp.py creates a web server that provides a web interface to make controlling the board easier. More on this after the installation info.<br>
-vestametar.py is the script that goes out to the FAA site to grab the METAR data, format it and send it to the Vestaboard.<br>
+<code>webapp.py</code><br> creates a web server that provides a web interface to make controlling the board easier. More on this after the installation info.<br>
+<code>vestametar.py</code><br> is the script that goes out to the FAA site to grab the METAR data, format it and send it to the Vestaboard.<br>
 
 Once cloning is complete, open the config.py file and make a few edits;<br>
 <code>cd vestametar</code><br>
@@ -38,7 +35,16 @@ Select 'Create new Installable' from the right side<br>
 Enter a Title in the pop up box, i.e. 'VestaMETAR'<br>
 Click 'Create and API Credential' button on the right side. A pop up box should allow you to choose your Vestaboard. Then click 'Create API Credentials'.<br>
 <b>IMPORTANT</b>: Copy and paste these credentials into the config.py file <b>BEFORE</b> closing the box, otherwise you will lose the 'Secret' key.<br>
+<code>api_key='Your Key'</code>
+<code>api_secret='Your Key'</code>
 
+There are some optional settings that can be tailored as well.
+<code>interval=</code> In minutes. This is the time in minutes between updating the Vestaboard for the 'airports' list.
+<code>interval_fc=</code> In minutes. This is the time in minutes between updating the Vestaboard for the 'airports_fc' list.
+<code>airports=</code> List of airports used on the display screens that display only 1 airport at a time.
+<code>airport_fc=</code> List of airports used on the display screens that display multiple airports at the same time.
+
+<b>NOTE:</b> The settings in the config.py file are used to run the app when not using the web based admin page which will be discussed shortly.
 
 
 
