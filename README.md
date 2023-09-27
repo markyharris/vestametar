@@ -1,6 +1,5 @@
 # VestaMETAR
-
-![image 1](https://github.com/[markyharris]/[vestametar]/blob/[main]/static/mult1.jpg?raw=true) 
+![image 1](https://github.com/[markyharris]/[vestametar]/blob/[main]/static/mult1.jpg?raw=true)
 <br>
 Display Airport METAR data on a Vestaboard
 
