@@ -16,7 +16,7 @@ subscription and I felt that access to these apps should have been included with
 writing this app that could be run locally to display the data I was interested in as a pilot. The nice thing about how this works 
 is that you can also use other apps from Vestaboard+ while still running the VestaMETAR app locally.
 
-To install and run:<br>
+<b>To install:</b><br>
 Clone this repository to your Raspberry Pi by entering the following in the command line;<br>
 git clone https://github.com/markyharris/vestametar.git<br>
 
@@ -37,7 +37,7 @@ Select 'API' from the left side<br>
 Select 'Create new Installable' from the right side<br>
 Enter a Title in the pop up box, i.e. 'VestaMETAR'<br>
 Click 'Create and API Credential' button on the right side. A pop up box should allow you to choose your Vestaboard. Then click 'Create API Credentials'.<br>
-IMPORTANT: Copy and paste these credentials into the config.py file BEFORE closing the box, otherwise you will lose the 'Secret' key.<br>
+<b>IMPORTANT</b>: Copy and paste these credentials into the config.py file <b>BEFORE</b> closing the box, otherwise you will lose the 'Secret' key.<br>
 
 
 
