@@ -68,6 +68,7 @@ Add the following lines after the 'fi' and before the 'exit';<br>
 
 <b>NOTE:</b> Depending on the username used, the first 'vestametar' above will need to be changed. For instance;<br>
 <code>sudo python3 /home/<b>pi</b>/vestametar/webapp.py &</code><br>
+<code>sudo python3 /home/<b>pi</b>/vestametar/vestametar.py &</code><br>
 
 Be sure to save the changes and return the vestametar directory;<br>
 <code>ctrl-x</code><br>
