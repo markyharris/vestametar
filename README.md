@@ -34,6 +34,7 @@ Select 'API' from the left side<br>
 Select 'Create new Installable' from the right side<br>
 Enter a Title in the pop up box, i.e. 'VestaMETAR'<br>
 Click 'Create and API Credential' button on the right side. A pop up box should allow you to choose your Vestaboard. Then click 'Create API Credentials'.<br>
+
 <b>IMPORTANT</b>: Copy and paste these credentials into the config.py file <b>BEFORE</b> closing the box, otherwise you will lose the 'Secret' key.<br>
 <code>api_key='Your Key'</code><br>
 <code>api_secret='Your Key'</code><br>
@@ -45,6 +46,29 @@ There are some optional settings that can be tailored as well.<br>
 <code>airport_fc=</code> List of airports used on the display screens that display multiple airports at the same time.<br>
 
 <b>NOTE:</b> The settings in the config.py file are used to run the app when not using the web based admin page which will be discussed shortly.<br>
+ 
+<b>Test</b><br>
+From the command line enter 
+<code>cd vestametar</code><br>
+<code>sudo python3 vestametar.py</code><br>
+
+The text output will show the data being grabbed from the FAA and the formatted data being sent to the Vestaboard. Then shortly after, the Vestaboard 
+will display the METAR data using the settings in the config.py file.
+
+Assuming that is working, we need to setup the RPi to run the app automatically upon boot up. From the command line, enter;
+<code>cd ~</code><br>
+<code>cd /etc</code><br>
+<code>sudo nano rc.local</code><br>
+
+Add the following lines after the 'fi' and before the 'exit';<br>
+<code>sleep 30</code><br>
+<code>sudo python3 /home/vestametar/vestametar/webapp.py &</code><br>
+<code>sudo python3 /home/vestametar/vestametar/vestametar.py &</code><br>
+
+<b>NOTE:</b>depending on the username used, the first 'vestametar' above will need to be changed. For instance;<br>
+<code>sudo python3 /home/<b>pi</b>/vestametar/webapp.py &</code><br>
+
+
 
 
 
