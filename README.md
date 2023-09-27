@@ -38,13 +38,13 @@ Click 'Create and API Credential' button on the right side. A pop up box should 
 <code>api_key='Your Key'</code>
 <code>api_secret='Your Key'</code>
 
-There are some optional settings that can be tailored as well.
-<code>interval=</code> In minutes. This is the time in minutes between updating the Vestaboard for the 'airports' list.
-<code>interval_fc=</code> In minutes. This is the time in minutes between updating the Vestaboard for the 'airports_fc' list.
-<code>airports=</code> List of airports used on the display screens that display only 1 airport at a time.
-<code>airport_fc=</code> List of airports used on the display screens that display multiple airports at the same time.
+There are some optional settings that can be tailored as well.<br>
+<code>interval=</code> In minutes. This is the time in minutes between updating the Vestaboard for the 'airports' list.<br>
+<code>interval_fc=</code> In minutes. This is the time in minutes between updating the Vestaboard for the 'airports_fc' list.<br>
+<code>airports=</code> List of airports used on the display screens that display only 1 airport at a time.<br>
+<code>airport_fc=</code> List of airports used on the display screens that display multiple airports at the same time.<br>
 
-<b>NOTE:</b> The settings in the config.py file are used to run the app when not using the web based admin page which will be discussed shortly.
+<b>NOTE:</b> The settings in the config.py file are used to run the app when not using the web based admin page which will be discussed shortly.<br>
 
 
 
