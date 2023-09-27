@@ -86,6 +86,7 @@ Next, go to a browser on a computer/tablet/phone that is on the same WiFi networ
 If the web admin page is displayed in the browser, then all is good.<br>
 
 <b>Web Admin Page</b><br>
+<p align="center"><img src=https://github.com/markyharris/vestametar/raw/main/static/webadmin.jpg width="400"></p>
 
 
 
