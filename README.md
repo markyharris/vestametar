@@ -23,8 +23,8 @@ Clone this repository to your Raspberry Pi by entering the following in the comm
 
 This will create a new directory called 'vestametar' and copy all the needed files into it.<br>
 There are 2 files that need to be run at startup;<br>
-<code>webapp.py</code><br> creates a web server that provides a web interface to make controlling the board easier. More on this after the installation info.<br>
-<code>vestametar.py</code><br> is the script that goes out to the FAA site to grab the METAR data, format it and send it to the Vestaboard.<br>
+<code>webapp.py</code> creates a web server that provides a web interface to make controlling the board easier. More on this after the installation info.<br>
+<code>vestametar.py</code> is the script that goes out to the FAA site to grab the METAR data, format it and send it to the Vestaboard.<br>
 
 Once cloning is complete, open the config.py file and make a few edits;<br>
 <code>cd vestametar</code><br>
