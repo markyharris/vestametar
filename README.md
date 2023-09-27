@@ -4,13 +4,13 @@ Display Airport METAR data on a Vestaboard
 
 Visit https://www.vestaboard.com/ to learn more about the Vestaboard. 
 
-METAR's are weather data for airports around the world. They provide pilots with most 
+A METAR is weather data for an airport. It provides pilots with most 
 everything a pilot needs to make go/no-go decisions. These have been around for a long time
 and are typically quite cryptic. Decoding them and understanding the data is part of learning to fly.
 To learn more about the structure of METAR's visit; https://metar-taf.com/explanation.
 
-This software was written in Python to function on a Windows computer running Unix or, preferable a Raspberry Pi running Unix. 
-There are a number of online sites that will host Python scripts as well. Examples are PythonAnywhere and Heroku.
+This software was written in Python 3 to function on a Windows computer running Unix or, preferably a Raspberry Pi running Unix. 
+There are a number of online sites that will host Python scripts as well. Examples are PythonAnywhere and Heroku, although this hasn't been tested.
 
 Vestaboard hosts a number of apps that display info on their boards called Vestaboard+. Unfortuneatly this is a monthly 
 subscription and I felt that access to these apps should have been included with the high cost of the board. So I set about 
@@ -88,9 +88,38 @@ If the web admin page is displayed in the browser, then all is good.<br>
 <b>Web Admin Page</b><br>
 <p align="center"><img src=https://github.com/markyharris/vestametar/raw/main/static/webadmin.jpg width="400"></p>
 
+To access the web admin enter the RPi's URL plus ':5000' into your web browser. The URL is displayed by the RPi on a monitor if connected 
+upon boot up. When webapp.py initializes, it also displays the full URL to access the admin web page. So take a look for this. Another way to get 
+the URL, you can access your router devices and look for the Raspberry Pi listed.<br>
 
+There are 2 styles of METAR display; Multi airports and Single airports. Multi airport displays will display the flight categories of multiple airports 
+on one screen, while single airport displays will display more information from a single airport on the Vestaboard. Each have the advantages. All can be 
+rotated through or the user can select only the ones that are desired.<br>
 
+Each type of display provides a pulldown menu to select the time interval between screen updates in minutes. Select as desired.<br>
 
+Finally, a textbox with airport ids is provided for each type of display. For instance for the multi airport displays;
+KFLG,KSEZ,KLAX,KPHX,KGEU,KINW,KBOS,KDAL,KDVT<br>
+Add as many as 12 airports to this textbox. The 12 airport display will display the flight categories for all 12. The 4 airport display will display 
+the first 4 of the list. If there are less than 12 airports, the display will adjust to the fewer number of airports. 
+
+For the single airport display, you can put as many airports as desired. However, each airport in the list will be cycled through at the time interval selected before 
+moving on to the next display format selected, which could take quite a bit of time.
+
+Once selections have been made, click the 'Submit' button. After a moment the display will update, and continue updating at the time interval selected.<br>
+
+<b>Misc</b><br>
+In the Vestaboard settings at web.vestaboard.com the user has the ability to select 'Quiet Hours' time. This app will see an error occur when it attempts to 
+update the Vestaboard display and it will simply wait the selected time interval before it attempts to update again. This will continue till the 'Quiet Hours' period 
+has expired. So if the 'Quiet Hours' ends at 7 am, and the time interval selected is 10 minutes, the display will update somewhere between 7:01 am and 7:10 am.<br>
+
+If there is an error in handling the raw METAR data, the app will attempt a soft landing by simply waiting the selected time interval before getting new METAR data. 
+If another error occurs, it will continue to wait and retry again. Once the METAR data is properly decoded, the display will update again. So its possible that the info 
+currently displayed on the Vestaboard is older than expected. Each display will show the time in which the update occurred to help determine how current the data is.<br>
+
+This software is evolving and as of this writing, code for using a PIR (motion sensor) is available to play with. In the file 'vestametar.py' is a variable 'use_pir' that 
+is set to '0' which ignores the use of the motion sensor. If its desirable to play with this feature, simply set this variable to '1'. i.e. 'use_pir=1' and save. 
+The software is using pin 11 for the motion sensor reading but this can be changed as necessary in 'vestametar.py' if desired.<br>
 
 
 
