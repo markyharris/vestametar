@@ -65,7 +65,7 @@ Add the following lines after the 'fi' and before the 'exit';<br>
 <code>sudo python3 /home/vestametar/vestametar/webapp.py &</code><br>
 <code>sudo python3 /home/vestametar/vestametar/vestametar.py &</code><br>
 
-<b>NOTE:</b>depending on the username used, the first 'vestametar' above will need to be changed. For instance;<br>
+<b>NOTE:</b> Depending on the username used, the first 'vestametar' above will need to be changed. For instance;<br>
 <code>sudo python3 /home/<b>pi</b>/vestametar/webapp.py &</code><br>
 
 
