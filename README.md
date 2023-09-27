@@ -82,7 +82,7 @@ Reboot the RPi now to test to be sure the rc.local will properly run 'webapp.py'
 
 After it reboots, the Vestaboard should update the display automatically.<br>
 Next, go to a browser on a computer/tablet/phone that is on the same WiFi network as the RPi and enter the RPi's IP address + ':5000' into the URL bar. For instance;<br>
-<code>http://192.168.1.32:5000</code><br>
+<code>http://192.168.1.32:5000</code> Yours will be different, this is only an example.<br>
 
 If the web admin page is displayed in the browser, then all is good.<br>
 
