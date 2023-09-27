@@ -98,10 +98,10 @@ on one screen, while single airport displays will display more information from 
 rotated through or the user can select only the ones that are desired.<br>
 
 <b>NOTE</b>: Flight categories summarize the overall weather at the airport, and aVre represented by a specific color as shown below.<br>
-$${\color{green}Green = VFR, Visual Flight Rules, Nice weather}$$<br>
-$${\color{blue}Blue = MVFR, Marginal Visual Flight Rules, Less nice weather}$$<br>
-$${\color{red}Red = IFR, Instrument Flight Rules, Poor weather}$$<br>
-$${\color{magenta}Magenta = LIFR, Low Instrument Flight Rules, Very poor weather}$$<br>
+$${\color{green}Green = VFR, \space Visual \space Flight \space Rules, \space Nice \space weather}$$
+$${\color{blue}Blue = MVFR, \space Marginal \space Visual \space Flight \space Rules, \space Less \space nice \space weather}$$
+$${\color{red}Red = IFR, \space Instrument \space Flight \space Rules, \space Poor \space weather}$$
+$${\color{magenta}Magenta = LIFR, \space Low \space Instrument \space Flight \space Rules, \space Very \space poor \space weather}$$
 
 Each type of display provides a pulldown menu to select the time interval between screen updates in minutes. Select as desired.<br>
 
