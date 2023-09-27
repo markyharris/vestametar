@@ -47,7 +47,7 @@ There are some optional settings that can be tailored as well.<br>
 
 <b>NOTE:</b> The settings in the config.py file are used to run the app when not using the web based admin page which will be discussed shortly.<br>
  
-<b>Test</b><br>
+<b>Test 1</b><br>
 From the command line enter;<br>
 <code>cd vestametar</code><br>
 <code>sudo python3 vestametar.py</code><br>
@@ -67,6 +67,26 @@ Add the following lines after the 'fi' and before the 'exit';<br>
 
 <b>NOTE:</b> Depending on the username used, the first 'vestametar' above will need to be changed. For instance;<br>
 <code>sudo python3 /home/<b>pi</b>/vestametar/webapp.py &</code><br>
+
+Be sure to save the changes and return the vestametar directory;<br>
+<code>ctrl-x</code><br>
+<code>Y</code><br>
+<code>cd ~</code><br>
+<code>cd vestametar</code><br>
+
+<b>Test 2</b><br>
+Reboot the RPi now to test to be sure the rc.local will properly run 'webapp.py' and 'vestametar.py'.<br>
+<code>sudo reboot now</code><br>
+
+After it reboots, the Vestaboard should update the display automatically.<br>
+Next, go to a browser on a computer/tablet/phone that is on the same WiFi network as the RPi and enter the RPi's IP address + ':5000' into the URL bar. For instance;<br>
+<code>http://192.168.1.32:5000</code><br>
+
+If the web admin page is displayed in the browser, then all is good.<br>
+
+<b>Web Admin Page</b><br>
+
+
 
 
 
