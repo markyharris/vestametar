@@ -18,19 +18,19 @@ is that you can also use other apps from Vestaboard+ while still running the Ves
 
 <b>To install:</b><br>
 Clone this repository to your Raspberry Pi by entering the following in the command line;<br>
-git clone https://github.com/markyharris/vestametar.git<br>
+<code>git clone https://github.com/markyharris/vestametar.git<</code>br>
 
 This will create a new directory called 'vestametar' and copy all the needed files into it.<br>
 There are 2 files that need to be run at startup;<br>
-webapp.py<br>
-vestametar.py<br>
+<code>webapp.py</code><br>
+<code>vestametar.py</code><br>
 
 webapp.py creates a web server that provides a web interface to make controlling the board easier. More on this after the installation info.<br>
 vestametar.py is the script that goes out to the FAA site to grab the METAR data, format it and send it to the Vestaboard.<br>
 
 Once cloning is complete, open the config.py file and make a few edits;<br>
-cd vestametar<br>
-sudo nano config.py<br>
+<code>cd vestametar</code><br>
+<code>sudo nano config.py</code><br>
 
 Visit; https://web.vestaboard.com/ and create an account, or login.<br>
 Select 'API' from the left side<br>
