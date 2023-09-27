@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VestaMetar Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/static/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+    window.onload = function() {
+        var eSelect = document.getElementById('fl_state_list_to_use');
+        var optOtherReason = document.getElementById('states');
+        
+        if({{ fl_state_list_to_use }} === 0) {
+            // alert("OnLoad--This Does Equal 0");
+            optOtherReason.style.display = 'block';
+            //document.getElementById('fl_single_state').disabled = false;
+        } else {
+            // alert("OnLoad--This Does NOT Equal 0");
+            optOtherReason.style.display = 'none';
+            //document.getElementById('fl_single_state').disabled = true;
+        }
+        
+        eSelect.onchange = function() {
+            if(eSelect.selectedIndex === 0) {
+                // alert("This Does NOT Equal 0");
+                optOtherReason.style.display = 'block';
+                //document.getElementById('fl_single_state').disabled = false;
+            } else {
+                // alert("This Does Equal 0");
+                optOtherReason.style.display = 'none';
+                //document.getElementById('fl_single_state').disabled = true;
+            } 
+        }
+    }
+  </script>
+</head>
+<body>
+
+<!-- This Style is specific to the help text that appears when a selection is made -->
+<!-- Technique taken from https://tutorialdeep.com/knowhow/change-image-on-dropdown-select-option-jquery/ -->
+
+<style>
+.myDiv{
+	display:none;
+    text-align:center;
+}  
+.myDiv img{
+  margin: 0 auto;
+}
+.myDiv span{
+	text-align: center;
+    background: #b1cafc;
+    padding: 6px 6px;
+    display: block;
+    width: 400px;
+    border: 1px solid blue;
+    margin: 8px auto;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.thumbnail{
+  width: 100px;
+  height: auto;
+  -webkit-transition-duration: 0.3s;
+}
+.thumbnail:hover {
+    top:-50px;
+    left:-35px;
+    width:500px;
+    height:auto;
+    display:block;
+    z-index:999;
+    cursor: pointer;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+}
+
+</style>
+<p>
+ 
+<!-- This script is used to 'show' the appropriate <div> for the specific information about a selection -->
+<script>
+$(document).ready(function(){
+    $('#myselection').on('change', function(){
+    	var demovalue = $(this).val(); 
+		demovalue=$.trim(demovalue.replace(/\s/g, ''));
+        $("div.myDiv").hide();
+        $("#show"+demovalue).show();
+		console.log(demovalue);
+    });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+   $(window).bind("load", function() {
+        $("div.myDiv").hide();
+        $("#show"+"0").show();
+		console.log(demovalue);
+  });
+});
+</script>
+
+ <p>
+ 
+<!-- Main HTML code to display dropdown and submit button -->
+<div class="container-fluid">
+  <div class="card border-primary mb-3">
+  <section class="py-5">
+
+
+<div class="container">
+  <h2>VestaMetar Admin {{ version }} - {{ name }}</h2>
+  Instructions: Using the options below adjust the behavior as needed.
+  <br>
+  <hr>
+
+	<!-- Flash message via flask and jinja to announce what is currently being displayed -->
+	<div class="flashes">
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<div class=flashes>
+		{% for message in messages %}
+		  </div><b class="text-danger">    {{ message }}</b>
+		{% endfor %}
+
+	  {% endif %}
+	{% endwith %}
+	</div>
+
+
+<form action="{{ url_for('vestametar') }}" method="post"> 
+
+        <label for="display"><b>Choose a Function:</b></label><br>
+		<select name="display" id="display">
+		  <option value="vestametar" {% if display=="vestametar" %} selected="selected" {% endif %}>VestaMETAR Display</option>
+		<!--  <option value="clock" {% if display=="clock" %} selected="selected" {% endif %}>Digital Clock Alone</option> -->
+		  <option value="off" {% if display=="off" %} selected="selected" {% endif %}>Turn Off VestaMETAR Display</option>
+		  <option value="clear" {% if display=="clear" %} selected="selected" {% endif %}>Clear VestaMETAR Display</option>
+		 <!-- <option value="powerdown" {% if display=="powerdown" %} selected="selected" {% endif %}>Power Down RPi</option> -->
+		</select>
+		<br>
+		<p><p>
+        <hr>
+
+    
+       <div class="form-group">
+            <label for="Make Selections"><b>Select Which Displays to Use</b></label><br>
+            <label for="Make Selections Multi"><b>Displays for Multiple Airports</b></label><br>
+            
+              <a href="./static/mult1.jpg" target="_blank"><img src="./static/mult1.jpg" width="100" class="thumbnail"></a>
+              <input type="checkbox" id="fl_display_mult_airports2" name="fl_display_mult_airports2" {% if fl_display_mult_airports2=="1" %} checked="checked" {% endif %}>
+              <label for="fl_display_mult_airports2">Display 4 Airport's METAR Data and Flight Categories</label>
+              <br><p>
+               
+              <a href="./static/mult2.jpg" target="_blank"><img src="./static/mult2.jpg" width="100" class="thumbnail"></a>
+              <input type="checkbox" id="fl_display_mult_airports1" name="fl_display_mult_airports1" {% if fl_display_mult_airports1=="1" %} checked="checked" {% endif %}>
+              <label for="fl_display_mult_airports1">Display 12 Airport's Flight Category</label>
+           <br><p> 
+
+        <label for="fl_interval_fc"><b>Choose Update Interval for Multi Airport Displays (In Minutes):</b></label><br>
+		<select name="fl_interval_fc" id="fl_interval_fc">
+		  <option value="15" {% if fl_interval_fc=="15" %} selected="selected" {% endif %}>15 Minutes</option>
+		  <option value="10" {% if fl_interval_fc=="10" %} selected="selected" {% endif %}>10 Minutes</option>
+		  <option value="5" {% if fl_interval_fc=="5" %} selected="selected" {% endif %}>5 Minutes</option>
+		  <option value="3" {% if fl_interval_fc=="3" %} selected="selected" {% endif %}>3 Minutes</option>
+		  <option value="2" {% if fl_interval_fc=="2" %} selected="selected" {% endif %}>2 Minutes</option>
+		  <option value="1" {% if fl_interval_fc=="1" %} selected="selected" {% endif %}>1 Minute</option>
+		</select>
+		<br><p>
+		
+		<label for="Airport List"><b>Multiple Display - Enter 4 Letter Airport ID's,(separated by a comma, no spaces)</b></label><br>
+        <input type=text name="fl_airports_fc" id="fl_airports_fc" size="80" value="{{ fl_airports_fc }}">
+        <p>
+
+           <hr>
+           
+           <label for="Make Selections Single"><b>Displays for A Single Airport</b></label><br>
+              <a href="./static/single1.jpg" target="_blank"><img src="./static/single1.jpg" width="100" class="thumbnail"></a>        
+              <input type="checkbox" id="fl_raw_metar_string" name="fl_raw_metar_string" {% if fl_raw_metar_string=="1" %} checked="checked" {% endif %}>
+              <label for="fl_raw_metar_string"> Display Single Airport's Raw METAR String and Flight Category</label>
+              <br>
+           
+              <a href="./static/single2.jpg" target="_blank"><img src="./static/single2.jpg" width="100" class="thumbnail"></a>
+              <input type="checkbox" id="fl_display_fc_large" name="fl_display_fc_large" {% if fl_display_fc_large=="1" %} checked="checked" {% endif %}>
+              <label for="fl_display_fc_large"> Display  Single Airport's Flight Category in Large Letters</label>
+              <br>
+           
+              <a href="./static/single3.jpg" target="_blank"><img src="./static/single3.jpg" width="100" class="thumbnail"></a>
+              <input type="checkbox" id="fl_display_decoded_metar" name="fl_display_decoded_metar" {% if fl_display_decoded_metar=="1" %} checked="checked" {% endif %}>
+              <label for="fl_display_decoded_metar"> Display Single Airport's METAR Data Decoded</label>
+              <br>
+              
+              <a href="./static/single4.jpg" target="_blank"><img src="./static/single4.jpg" width="100" class="thumbnail"></a>
+              <input type="checkbox" id="fl_display_large_arrow" name="fl_display_large_arrow" {% if fl_display_large_arrow=="1" %} checked="checked" {% endif %}>
+              <label for="fl_display_large_arrow"> Display Single Airport's Wind Speed and Direction with Large Arrow</label>
+              <br>
+         <br><p> 
+
+        <label for="fl_interval"><b>Choose Update Interval for Single Airport Displays (In Minutes):</b></label><br>
+		<select name="fl_interval" id="fl_interval">
+		  <option value="15" {% if fl_interval=="15" %} selected="selected" {% endif %}>15 Minutes</option>
+		  <option value="10" {% if fl_interval=="10" %} selected="selected" {% endif %}>10 Minutes</option>
+		  <option value="5" {% if fl_interval=="5" %} selected="selected" {% endif %}>5 Minutes</option>
+		  <option value="3" {% if fl_interval=="3" %} selected="selected" {% endif %}>3 Minutes</option>
+		  <option value="2" {% if fl_interval=="2" %} selected="selected" {% endif %}>2 Minutes</option>
+		  <option value="1" {% if fl_interval=="1" %} selected="selected" {% endif %}>1 Minute</option>
+		</select>
+		<br><p>
+		
+		<label for="Airport List1"><b>Single Display - Enter 4 Letter Airport ID's,(separated by a comma, no spaces)</b></label><br>
+        <input type=text name="fl_airports" id="fl_airports" size="80" value="{{ fl_airports }}">
+        <p>
+        <br><p>
+        <hr> 
+		<p> 
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <p>
+		
+
+
+	<!-- Flash message via flask and jinja to announce what is currently being displayed -->
+	<div class="flashes">
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<div class=flashes>
+		{% for message in messages %}
+		  </div><b class="text-danger">    {{ message }}</b>
+		{% endfor %}
+
+	  {% endif %}
+	{% endwith %}
+	</div>
+	
+	</div>
+   </form>
+
+  </div>
+ </div>				
+
+</body>
+</html>
