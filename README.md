@@ -96,6 +96,7 @@ the URL, you can access your router devices and look for the Raspberry Pi listed
 There are 2 styles of METAR display; Multi airports and Single airports. Multi airport displays will display the flight categories of multiple airports 
 on one screen, while single airport displays will display more information from a single airport on the Vestaboard. Each have the advantages. All can be 
 rotated through or the user can select only the ones that are desired.<br>
+
 <b>NOTE</b>: Flight categories summarize the overall weather at the airport, and aVre represented by a specific color as shown below.<br>
 Green = VFR, Visual Flight Rules, Nice weather<br>
 Blue = MVFR, Marginal Visual Flight Rules, Less nice weather<br>
