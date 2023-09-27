@@ -8,12 +8,13 @@ import os
 import sys
 import subprocess as s
 from config import *
+import config
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 # variables
-PATH = '/home/vestametar/vestametar/'
+PATH = config.PATH # '/home/vestametar/vestametar/'
 display_lst = [
             "display_mult_airports2",
             "display_mult_airports1",

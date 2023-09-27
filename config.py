@@ -6,6 +6,7 @@ subscription_id='78c354dc-287b-4f7c-9d1f-981ea6d774e4'
 interval = 1 # mins for update of data
 interval_fc = 1 # mins for update of data
 url = "https://tgftp.nws.noaa.gov/data/observations/metar/stations/"
+PATH = "/home/vestametar/vestametar/"
 
 airports = [
     'KFLG',

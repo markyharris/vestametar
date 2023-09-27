@@ -53,7 +53,7 @@ interval = config.interval # mins for update of data
 interval_fc = config.interval_fc # mins for update of data - used for multiple airports fc
 
 # Misc Variables
-PATH = '/home/vestametar/vestametar/' 
+PATH = config.PATH # '/home/vestametar/vestametar/' 
 url = config.url #"https://tgftp.nws.noaa.gov/data/observations/metar/stations/"
 content = []
 info = []
