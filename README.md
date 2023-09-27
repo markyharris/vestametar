@@ -55,7 +55,7 @@ From the command line enter;<br>
 The text output will show the data being grabbed from the FAA and the formatted data being sent to the Vestaboard. Then shortly after, the Vestaboard 
 will display the METAR data using the settings in the config.py file.
 
-Assuming that is working, we need to setup the RPi to run the app automatically upon boot up. From the command line, enter;
+Assuming that is working, we need to setup the RPi to run the app automatically upon boot up. From the command line, enter;<br>
 <code>cd ~</code><br>
 <code>cd /etc</code><br>
 <code>sudo nano rc.local</code><br>
