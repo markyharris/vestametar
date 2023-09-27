@@ -16,28 +16,28 @@ subscription and I felt that access to these apps should have been included with
 writing this app that could be run locally to display the data I was interested in as a pilot. The nice thing about how this works 
 is that you can also use other apps from Vestaboard+ while still running the VestaMETAR app locally.
 
-To install and run:
-Clone this repository to your Raspberry Pi by entering the following in the command line;
-git clone https://github.com/markyharris/vestametar.git
+To install and run:<b>
+Clone this repository to your Raspberry Pi by entering the following in the command line;<b>
+git clone https://github.com/markyharris/vestametar.git<b>
 
-This will create a new directory called 'vestametar' and copy all the needed files into it.
-There are 2 files that need to be run at startup;
-webapp.py
-vestametar.py
+This will create a new directory called 'vestametar' and copy all the needed files into it.<b>
+There are 2 files that need to be run at startup;<b>
+webapp.py<b>
+vestametar.py<b>
 
-webapp.py creates a web server that provides a web interface to make controlling the board easier. More on this after the installation info.
-vestametar.py is the script that goes out to the FAA site to grab the METAR data, format it and send it to the Vestaboard.
+webapp.py creates a web server that provides a web interface to make controlling the board easier. More on this after the installation info.<b>
+vestametar.py is the script that goes out to the FAA site to grab the METAR data, format it and send it to the Vestaboard.<b>
 
-Once cloning is complete, open the config.py file and make a few edits;
-cd vestametar
-sudo nano config.py
+Once cloning is complete, open the config.py file and make a few edits;<b>
+cd vestametar<b>
+sudo nano config.py<b>
 
-Visit; https://web.vestaboard.com/ and create an account, or login.
-Select 'API' from the left side
-Select 'Create new Installable' from the right side
-Enter a Title in the pop up box, i.e. 'VestaMETAR'
-Click 'Create and API Credential' button on the right side. A pop up box should allow you to choose your Vestaboard. Then click 'Create API Credentials'.
-IMPORTANT: Copy and paste these credentials into the config.py file BEFORE closing the box, otherwise you will lose the 'Secret' key.
+Visit; https://web.vestaboard.com/ and create an account, or login.<b>
+Select 'API' from the left side<b>
+Select 'Create new Installable' from the right side<b>
+Enter a Title in the pop up box, i.e. 'VestaMETAR'<b>
+Click 'Create and API Credential' button on the right side. A pop up box should allow you to choose your Vestaboard. Then click 'Create API Credentials'.<b>
+IMPORTANT: Copy and paste these credentials into the config.py file BEFORE closing the box, otherwise you will lose the 'Secret' key.<b>
 
 
 
