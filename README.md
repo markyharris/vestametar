@@ -107,7 +107,7 @@ Each type of display provides a pulldown menu to select the time interval betwee
 
 Finally, a textbox with airport ids is provided for each type of display. For instance for the multi airport displays;
 KFLG,KSEZ,KLAX,KPHX,KGEU,KINW,KBOS,KDAL,KDVT<br>
-
+ 
 Add as many as 12 airports to this textbox. The 12 airport display will display the flight categories for all 12. The 4 airport display will display 
 the first 4 of the list. If there are less than 12 airports, the display will adjust to the fewer number of airports. More then 12 will be ignored.
 
